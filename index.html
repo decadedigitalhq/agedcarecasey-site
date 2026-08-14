@@ -308,7 +308,7 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
         </div>
         <input type="hidden" name="lead_source" value="Waitlist Form - Hero">
         <input type="hidden" name="_subject" value="New lead — Aged Care Casey waitlist">
-        <button class="submit-btn" onclick="submitForm()">Get matched with local help →</button>
+        <button class="submit-btn" onclick="submitForm(event)">Get matched with local help →</button>
         <p class="form-note">🔒 Your details are private. No spam, ever. Unsubscribe anytime.</p>
       </div>
       <div class="success-msg" id="success-msg">
@@ -528,7 +528,7 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
       <div class="guide-form-label">Get your free copy</div>
       <input class="guide-input" type="text" placeholder="Your name" id="g-name" name="name">
       <input class="guide-input" type="email" placeholder="Email address" id="g-email" name="email">
-      <button class="guide-submit" onclick="submitGuide()">Send me the free guide →</button>
+      <button class="guide-submit" onclick="submitGuide(event)">Send me the free guide →</button>
       <p class="guide-note">PDF delivered instantly. No spam.</p>
     </div>
   </div>
@@ -680,7 +680,7 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
         <label style="font-size:12px;font-weight:600;color:var(--ink-mid);display:block;margin-bottom:5px">Get this estimate emailed to you</label>
         <input type="email" id="est-email" name="email" placeholder="your@email.com" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:6px;font-size:14px;font-family:var(--sans);outline:none">
       </div>
-      <button class="result-cta" onclick="submitEstimate()">Send estimate & get matched →</button>
+      <button class="result-cta" onclick="submitEstimate(event)">Send estimate & get matched →</button>
       <p class="result-note">We'll send the estimate and our free guide. No spam.</p>
     </div>
   </div>
@@ -712,13 +712,13 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
 <script>
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mzepgyqr';
 
-function submitForm(){
+function submitForm(evt){
   const fn=document.getElementById('fn').value.trim();
   const email=document.getElementById('email').value.trim();
   const category=document.getElementById('category').value;
   if(!fn||!email){alert('Please enter your name and email.');return;}
 
-  const btn=event.currentTarget;
+  const btn=evt.currentTarget;
   btn.disabled=true;
   btn.textContent='Sending…';
 
@@ -761,12 +761,12 @@ function submitForm(){
 
 const GUIDE_PDF_URL = '/casey-cardinia-guide-2026.pdf';
 
-function submitGuide(){
+function submitGuide(evt){
   const name=document.getElementById('g-name').value.trim();
   const email=document.getElementById('g-email').value.trim();
   if(!name||!email){alert('Please enter your name and email.');return;}
 
-  const btn=event.currentTarget;
+  const btn=evt.currentTarget;
   btn.disabled=true;
   btn.textContent='Sending…';
 
@@ -847,11 +847,11 @@ function showEstResult(){
   document.getElementById('es5').classList.remove('active');
   document.getElementById('es-result').classList.add('active');
 }
-function submitEstimate(){
+function submitEstimate(evt){
   const email=document.getElementById('est-email').value.trim();
   if(!email){alert('Please enter your email.');return;}
 
-  const btn=event.currentTarget;
+  const btn=evt.currentTarget;
   btn.disabled=true;
   btn.textContent='Sending…';
 
