@@ -381,7 +381,7 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
         <p>12 questions to ask any home care provider — helps you compare options on the My Aged Care portal with confidence.</p>
         <div class="tool-link">Download checklist →</div>
       </div>
-      <div class="tool-card">
+      <div class="tool-card" onclick="alert('Coming soon — free guides in Arabic, Tagalog, and Hindi. Join our waitlist and we\'ll let you know the moment they\'re ready.')">
         <div class="tool-icon">🌏</div>
         <h4>CALD community guide</h4>
         <p>Guides available in Arabic, Tagalog, and Hindi explaining how to access Support at Home — written for culturally and linguistically diverse families in Casey.</p>
@@ -622,11 +622,11 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
     <div class="est-step active" id="es1">
       <div class="est-q">What level of support does your parent need day to day?</div>
       <div class="est-options">
-        <div class="est-opt" onclick="estPick(1,1)">Occasional help — cleaning, transport, shopping</div>
-        <div class="est-opt" onclick="estPick(1,2)">Regular help — cleaning, personal care, social support</div>
-        <div class="est-opt" onclick="estPick(1,4)">Daily help — morning care, meals, medication</div>
-        <div class="est-opt" onclick="estPick(1,6)">Intensive support — multiple visits daily, complex needs</div>
-        <div class="est-opt" onclick="estPick(1,8)">Very high care — near-nursing level support</div>
+        <div class="est-opt" onclick="estPick(event,1,1)">Occasional help — cleaning, transport, shopping</div>
+        <div class="est-opt" onclick="estPick(event,1,2)">Regular help — cleaning, personal care, social support</div>
+        <div class="est-opt" onclick="estPick(event,1,4)">Daily help — morning care, meals, medication</div>
+        <div class="est-opt" onclick="estPick(event,1,6)">Intensive support — multiple visits daily, complex needs</div>
+        <div class="est-opt" onclick="estPick(event,1,8)">Very high care — near-nursing level support</div>
       </div>
       <div class="est-nav"><span></span><div class="est-progress">Step 1 of 5</div></div>
     </div>
@@ -634,9 +634,9 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
     <div class="est-step" id="es2">
       <div class="est-q">What is their pension / income status?</div>
       <div class="est-options">
-        <div class="est-opt" onclick="estPick(2,'full')">Full Age Pensioner</div>
-        <div class="est-opt" onclick="estPick(2,'part')">Part Pensioner / some income</div>
-        <div class="est-opt" onclick="estPick(2,'self')">Self-funded retiree</div>
+        <div class="est-opt" onclick="estPick(event,2,'full')">Full Age Pensioner</div>
+        <div class="est-opt" onclick="estPick(event,2,'part')">Part Pensioner / some income</div>
+        <div class="est-opt" onclick="estPick(event,2,'self')">Self-funded retiree</div>
       </div>
       <div class="est-nav"><button class="est-back" onclick="estBack(1)">← Back</button><div class="est-progress">Step 2 of 5</div></div>
     </div>
@@ -644,10 +644,10 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
     <div class="est-step" id="es3">
       <div class="est-q">Which services are most important?</div>
       <div class="est-options">
-        <div class="est-opt" onclick="estPick(3,'domestic')">Domestic help, transport, social support</div>
-        <div class="est-opt" onclick="estPick(3,'personal')">Personal care — showering, dressing, grooming</div>
-        <div class="est-opt" onclick="estPick(3,'clinical')">Nursing, physio, allied health</div>
-        <div class="est-opt" onclick="estPick(3,'mix')">A mix of all of the above</div>
+        <div class="est-opt" onclick="estPick(event,3,'domestic')">Domestic help, transport, social support</div>
+        <div class="est-opt" onclick="estPick(event,3,'personal')">Personal care — showering, dressing, grooming</div>
+        <div class="est-opt" onclick="estPick(event,3,'clinical')">Nursing, physio, allied health</div>
+        <div class="est-opt" onclick="estPick(event,3,'mix')">A mix of all of the above</div>
       </div>
       <div class="est-nav"><button class="est-back" onclick="estBack(2)">← Back</button><div class="est-progress">Step 3 of 5</div></div>
     </div>
@@ -655,9 +655,9 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
     <div class="est-step" id="es4">
       <div class="est-q">Where do they live?</div>
       <div class="est-options">
-        <div class="est-opt" onclick="estPick(4,'casey')">Casey region (Clyde North, Cranbourne, Berwick…)</div>
-        <div class="est-opt" onclick="estPick(4,'cardinia')">Cardinia Shire (Pakenham, Officer, Beaconsfield…)</div>
-        <div class="est-opt" onclick="estPick(4,'other')">Elsewhere in Australia</div>
+        <div class="est-opt" onclick="estPick(event,4,'casey')">Casey region (Clyde North, Cranbourne, Berwick…)</div>
+        <div class="est-opt" onclick="estPick(event,4,'cardinia')">Cardinia Shire (Pakenham, Officer, Beaconsfield…)</div>
+        <div class="est-opt" onclick="estPick(event,4,'other')">Elsewhere in Australia</div>
       </div>
       <div class="est-nav"><button class="est-back" onclick="estBack(3)">← Back</button><div class="est-progress">Step 4 of 5</div></div>
     </div>
@@ -665,9 +665,9 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
     <div class="est-step" id="es5">
       <div class="est-q">Have they contacted My Aged Care yet?</div>
       <div class="est-options">
-        <div class="est-opt" onclick="estPick(5,'yes')">Yes — already assessed or waiting</div>
-        <div class="est-opt" onclick="estPick(5,'no')">No — haven't started yet</div>
-        <div class="est-opt" onclick="estPick(5,'notsure')">Not sure — still researching</div>
+        <div class="est-opt" onclick="estPick(event,5,'yes')">Yes — already assessed or waiting</div>
+        <div class="est-opt" onclick="estPick(event,5,'no')">No — haven't started yet</div>
+        <div class="est-opt" onclick="estPick(event,5,'notsure')">Not sure — still researching</div>
       </div>
       <div class="est-nav"><button class="est-back" onclick="estBack(4)">← Back</button><div class="est-progress">Step 5 of 5</div></div>
     </div>
@@ -798,11 +798,11 @@ let estAnswers={};
 function openEstimator(){document.getElementById('est-modal').classList.add('open')}
 function closeEstimator(){document.getElementById('est-modal').classList.remove('open')}
 document.getElementById('est-modal').addEventListener('click',function(e){if(e.target===this)closeEstimator()});
-function estPick(step,val){
+function estPick(evt,step,val){
   estAnswers[step]=val;
   const opts=document.querySelectorAll('#es'+step+' .est-opt');
   opts.forEach(o=>o.classList.remove('selected'));
-  event.currentTarget.classList.add('selected');
+  evt.currentTarget.classList.add('selected');
   setTimeout(()=>{
     if(step<5){
       document.getElementById('es'+step).classList.remove('active');
