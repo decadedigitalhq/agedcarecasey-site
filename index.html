@@ -758,6 +758,8 @@ function submitForm(){
   });
 }
 
+const GUIDE_PDF_URL = '/casey-cardinia-guide-2026.pdf';
+
 function submitGuide(){
   const name=document.getElementById('g-name').value.trim();
   const email=document.getElementById('g-email').value.trim();
@@ -778,9 +780,10 @@ function submitGuide(){
   })
   .then(res=>{
     if(!res.ok) throw new Error('Submission failed');
-    btn.textContent='Sent! Check your inbox ✓';
+    btn.textContent='Opening your guide ✓';
     document.getElementById('g-name').value='';
     document.getElementById('g-email').value='';
+    window.open(GUIDE_PDF_URL, '_blank');
     setTimeout(()=>{btn.disabled=false;btn.textContent='Send me the free guide →';},4000);
   })
   .catch(()=>{
