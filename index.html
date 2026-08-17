@@ -222,14 +222,14 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
 </nav>
 
 <div class="disclosure-bar">
-  <p>Aged Care Casey is an independent local information resource for Casey & Cardinia families — not a government service. We help you understand your options and connect with the right local support, including services we don't directly provide ourselves.</p>
+  <p>Aged Care Casey is an independent local information and referral service for Casey & Cardinia families — not a government service, and not yet a registered aged care provider. We help you understand your options and connect you with trusted local providers.</p>
 </div>
 
 <section class="hero">
   <div>
     <div class="hero-eyebrow">Free local resource · Casey & Cardinia</div>
     <h1>Aged care in Casey,<br><em>explained simply</em> —<br>and the right help found</h1>
-    <p class="hero-sub">Free tools and plain-English guidance to help Casey and Cardinia families understand Support at Home, check eligibility, and find the right local care — whether that's us or another trusted local provider.</p>
+    <p class="hero-sub">Free tools and plain-English guidance to help Casey and Cardinia families understand Support at Home, check eligibility, and connect with trusted local providers who can help.</p>
     <div class="hero-actions">
       <button class="btn-primary" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">Get free guidance</button>
       <button class="btn-ghost" onclick="openEstimator()">Check your SAH funding →</button>
@@ -296,14 +296,14 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
           <label>What kind of support is needed?</label>
           <select id="category" name="service_requested">
             <option value="">Select category</option>
-            <option value="Domestic help (served)">Domestic help, cleaning, shopping</option>
-            <option value="Social support (served)">Social support / companionship</option>
-            <option value="Transport (served)">Transport to appointments</option>
-            <option value="Personal care (referred)">Personal care (showering, dressing)</option>
-            <option value="Nursing/clinical (referred)">Nursing / clinical care</option>
-            <option value="Allied health (referred)">Allied health (physio, OT)</option>
-            <option value="Residential care (referred)">Residential care placement</option>
-            <option value="Not sure (unsure)">Not sure yet</option>
+            <option value="Domestic help">Domestic help, cleaning, shopping</option>
+            <option value="Social support">Social support / companionship</option>
+            <option value="Transport">Transport to appointments</option>
+            <option value="Personal care">Personal care (showering, dressing)</option>
+            <option value="Nursing/clinical">Nursing / clinical care</option>
+            <option value="Allied health">Allied health (physio, OT)</option>
+            <option value="Residential care">Residential care placement</option>
+            <option value="Not sure">Not sure yet</option>
           </select>
         </div>
         <input type="hidden" name="lead_source" value="Waitlist Form - Hero">
@@ -393,48 +393,48 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
 
 <section class="section category-section" id="directory">
   <div class="section-inner">
-    <div class="section-label">What we do — and don't — provide directly</div>
-    <div class="section-title">An honest map of local care<br>categories in Casey & Cardinia</div>
-    <div class="section-body">We believe families deserve a straight answer about who can help with what. Here's what we currently support directly, and where we connect you to a trusted local partner instead.</div>
+    <div class="section-label">Where every category currently points</div>
+    <div class="section-title">An honest map of local care<br>in Casey & Cardinia</div>
+    <div class="section-body">We're an independent local guide — not yet a registered aged care provider ourselves. Right now, every category below connects you to a trusted local provider we've vetted, rather than a service we deliver directly. We'll update this the moment that changes.</div>
 
     <div class="category-grid">
-      <div class="cat-card tag-served">
-        <span class="cat-status served">We help directly</span>
+      <div class="cat-card tag-referred">
+        <span class="cat-status referred">We connect you locally</span>
         <h5>Domestic Assistance</h5>
-        <p>Cleaning, laundry, meal preparation, grocery shopping — delivered by our own local team.</p>
+        <p>Cleaning, laundry, meal preparation, grocery shopping — we introduce you to a vetted local provider.</p>
       </div>
-      <div class="cat-card tag-served">
-        <span class="cat-status served">We help directly</span>
+      <div class="cat-card tag-referred">
+        <span class="cat-status referred">We connect you locally</span>
         <h5>Social Support</h5>
         <p>Companionship, accompanied outings, community access, and respite for family carers.</p>
       </div>
-      <div class="cat-card tag-served">
-        <span class="cat-status served">We help directly</span>
+      <div class="cat-card tag-referred">
+        <span class="cat-status referred">We connect you locally</span>
         <h5>Transport</h5>
         <p>Trips to medical appointments, shopping, and social activities across Casey and Cardinia.</p>
       </div>
       <div class="cat-card tag-referred">
-        <span class="cat-status referred">We refer you locally</span>
+        <span class="cat-status referred">We connect you locally</span>
         <h5>Personal Care</h5>
         <p>Showering, dressing, and grooming support — we connect you with a qualified local partner provider.</p>
       </div>
       <div class="cat-card tag-referred">
-        <span class="cat-status referred">We refer you locally</span>
+        <span class="cat-status referred">We connect you locally</span>
         <h5>Nursing & Clinical Care</h5>
         <p>Wound care, medication management, and nursing — fully government-funded, delivered via partner clinicians.</p>
       </div>
       <div class="cat-card tag-referred">
-        <span class="cat-status referred">We refer you locally</span>
+        <span class="cat-status referred">We connect you locally</span>
         <h5>Allied Health</h5>
         <p>Physiotherapy, occupational therapy, and podiatry — we point you to trusted Casey-based allied health providers.</p>
       </div>
       <div class="cat-card tag-referred">
-        <span class="cat-status referred">We refer you locally</span>
+        <span class="cat-status referred">We connect you locally</span>
         <h5>Residential Care</h5>
         <p>When home is no longer enough, we help families compare local residential options and next steps.</p>
       </div>
-      <div class="cat-card tag-served">
-        <span class="cat-status served">We help directly</span>
+      <div class="cat-card tag-referred">
+        <span class="cat-status referred">We connect you locally</span>
         <h5>Gardening & Home Help</h5>
         <p>Lawn mowing, minor home maintenance, and light gardening for safety and independence at home.</p>
       </div>
@@ -588,12 +588,13 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
 
 <section class="section about-section">
   <div class="section-inner">
-    <div class="section-label">Why we built this</div>
+    <div class="section-label">Who we are, right now</div>
     <div class="section-title">A straight answer, from someone<br>who lives here</div>
     <div class="about-box">
       <p><strong>Aged Care Casey exists because the system is genuinely confusing</strong> — and Casey and Cardinia, despite being Victoria's largest and fastest-growing council area, have some of the thinnest aged care provider coverage in the state. Families here are often left figuring out the new Support at Home program on their own.</p>
-      <p>We're a Casey-based team building an aged care service from the ground up. Rather than only promoting what we offer, we built this resource to give every family a straight answer — including for the services we don't yet provide ourselves. Where that's the case, we connect you with a trusted local partner instead.</p>
-      <p>Over time, the questions families ask us here help guide what we build next. If we're consistently referring people elsewhere for a particular kind of care, that tells us where Casey and Cardinia need more local capacity — and where we should grow to meet it.</p>
+      <p>We're a Casey-based team, and we want to be upfront: we are not yet a registered aged care provider. We're currently going through the process of becoming one. Until that's complete, our role is to help you understand the system and connect you with trusted local providers we've vetted — at no cost, and with no obligation.</p>
+      <p>Every enquiry we receive helps us understand what Casey and Cardinia families actually need most. That's genuinely useful to us as we build toward delivering services ourselves — and it means the help we point you toward today is based on real local knowledge, not a directory search.</p>
+      <p>We'll update this page the moment our own registration is complete and we can begin delivering services directly.</p>
     </div>
   </div>
 </section>
@@ -743,13 +744,8 @@ function submitForm(evt){
     document.getElementById('hero-form').style.display='none';
     const title=document.getElementById('success-title');
     const body=document.getElementById('success-body');
-    if(category.includes('referred')){
-      title.textContent="Thanks — we'll connect you with the right local help 🎉";
-      body.textContent="This is a service we refer to a trusted local partner for. We'll be in touch within 24 hours with a recommendation.";
-    } else {
-      title.textContent="You're on the list! 🎉";
-      body.textContent="We'll be in touch within 24 hours with your free guide and next steps.";
-    }
+    title.textContent="Thanks — we'll connect you with the right local help 🎉";
+    body.textContent="We'll be in touch within 24 hours with a recommendation from a trusted local provider.";
     document.getElementById('success-msg').style.display='block';
   })
   .catch(()=>{
@@ -838,12 +834,9 @@ function showEstResult(){
     </div>
   `;
   const referNote=document.getElementById('refer-note');
-  if(serviceType==='personal'||serviceType==='clinical'){
-    referNote.classList.add('show');
-    referNote.innerHTML='<strong>Heads up:</strong> '+(serviceType==='personal'?'Personal care':'Clinical care')+' is a service we connect Casey & Cardinia families with a trusted local partner for — we\'ll include their details with your estimate.';
-  } else {
-    referNote.classList.remove('show');
-  }
+  const serviceLabels={domestic:'Domestic help',personal:'Personal care',clinical:'Clinical care',mix:'These services'};
+  referNote.classList.add('show');
+  referNote.innerHTML='<strong>Good to know:</strong> '+(serviceLabels[serviceType]||'This')+' is delivered by a trusted local partner we connect you with — we are an independent local guide, not yet a registered aged care provider ourselves. We\'ll include their details with your estimate.';
   document.getElementById('es5').classList.remove('active');
   document.getElementById('es-result').classList.add('active');
 }
