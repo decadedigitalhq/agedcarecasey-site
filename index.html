@@ -171,6 +171,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,250,244,
 .partner-card h5{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px}
 .partner-card p{font-size:12px;color:var(--ink-light);line-height:1.5}
 .about-section{background:#fff}
+.workforce-section{background:var(--warm);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.workforce-inner{max-width:1140px;margin:0 auto;padding:70px 24px;display:grid;grid-template-columns:1fr 380px;gap:50px;align-items:start}
+.workforce-badge{display:inline-flex;align-items:center;gap:6px;background:var(--gold-light);color:var(--gold);font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;letter-spacing:.4px;font-family:var(--mono);text-transform:uppercase;margin-bottom:16px}
+.workforce-langs{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.workforce-lang-pill{background:#fff;border:1.5px solid var(--sage);color:var(--sage);font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px}
+.workforce-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,.05)}
+.workforce-card h3{font-family:var(--serif);font-size:20px;color:var(--ink);margin-bottom:6px}
+.workforce-card p.wf-sub{font-size:13px;color:var(--ink-light);margin-bottom:20px}
+@media(max-width:760px){.workforce-inner{grid-template-columns:1fr}}
 .about-box{background:var(--warm);border:1px solid var(--border);border-radius:16px;padding:32px;margin-top:40px}
 .about-box p{font-size:14px;color:var(--ink-mid);line-height:1.75;margin-bottom:14px}
 .about-box p:last-child{margin-bottom:0}
@@ -599,6 +608,77 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
   </div>
 </section>
 
+<section class="workforce-section" id="workforce-section">
+  <div class="workforce-inner">
+    <div>
+      <div class="workforce-badge">For care workers, not families</div>
+      <div class="section-title" style="margin-bottom:14px">Thinking about care work<br>in Casey or Cardinia?</div>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;max-width:520px;margin-bottom:16px">We're building our own local care team as we work through registration — and Casey's fastest-growing communities need support workers who speak their language and understand their background just as much as they need funding explained clearly.</p>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;max-width:520px">We're not hiring yet. But if you're a support worker, or interested in becoming one, we'd like to know you're here — especially if you speak one of Casey's most-needed community languages.</p>
+      <div class="workforce-langs">
+        <span class="workforce-lang-pill">Punjabi</span>
+        <span class="workforce-lang-pill">Mandarin</span>
+        <span class="workforce-lang-pill">Tamil</span>
+        <span class="workforce-lang-pill">English</span>
+        <span class="workforce-lang-pill">Other — let us know</span>
+      </div>
+    </div>
+
+    <div class="workforce-card">
+      <h3>Register your interest</h3>
+      <p class="wf-sub">Takes 60 seconds. We'll reach out when we're ready to start building our team.</p>
+      <div id="wf-form">
+        <div class="form-group">
+          <label>Full name</label>
+          <input type="text" placeholder="Your name" id="wf-name" name="name">
+        </div>
+        <div class="form-group">
+          <label>Email address</label>
+          <input type="email" placeholder="you@email.com" id="wf-email" name="email">
+        </div>
+        <div class="form-group">
+          <label>Phone (optional)</label>
+          <input type="tel" placeholder="04xx xxx xxx" id="wf-phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label>Languages you speak (besides English)</label>
+          <select id="wf-lang" name="languages">
+            <option value="">Select one</option>
+            <option>Punjabi</option>
+            <option>Mandarin</option>
+            <option>Tamil</option>
+            <option>Hindi</option>
+            <option>Vietnamese</option>
+            <option>Sinhalese</option>
+            <option>Arabic</option>
+            <option>Other</option>
+            <option>English only</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Current experience</label>
+          <select id="wf-exp" name="experience">
+            <option value="">Select one</option>
+            <option>Currently a support worker (Cert III or equivalent)</option>
+            <option>Currently a support worker (no formal qualification)</option>
+            <option>Studying towards a Cert III in Individual Support</option>
+            <option>Interested, but no experience yet</option>
+            <option>Registered Nurse / Allied Health professional</option>
+          </select>
+        </div>
+        <input type="hidden" name="lead_source" value="Workforce Interest Form">
+        <input type="hidden" name="_subject" value="New workforce interest — Aged Care Casey">
+        <button class="submit-btn" onclick="submitWorkforce(event)">Register my interest →</button>
+        <p class="form-note">🔒 Your details are private. We'll only contact you about care work opportunities.</p>
+      </div>
+      <div class="success-msg" id="wf-success-msg">
+        <h4>Thanks for registering 🎉</h4>
+        <p>We'll be in touch as soon as we're ready to start building our local team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">Aged Care Casey</div>
@@ -606,6 +686,7 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
     <div class="footer-links">
       <a href="#">Privacy Policy</a>
       <a href="#">Contact Us</a>
+      <a href="#workforce-section">Care Worker Enquiries</a>
       <a href="https://www.myagedcare.gov.au" target="_blank">My Aged Care (official)</a>
     </div>
     <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border)">
@@ -756,6 +837,41 @@ function submitForm(evt){
 }
 
 const GUIDE_PDF_URL = '/casey-cardinia-guide-2026.pdf';
+
+function submitWorkforce(evt){
+  const name=document.getElementById('wf-name').value.trim();
+  const email=document.getElementById('wf-email').value.trim();
+  if(!name||!email){alert('Please enter your name and email.');return;}
+
+  const btn=evt.currentTarget;
+  btn.disabled=true;
+  btn.textContent='Sending…';
+
+  const payload={
+    name: name,
+    email: email,
+    phone: document.getElementById('wf-phone').value.trim(),
+    languages: document.getElementById('wf-lang').value,
+    experience: document.getElementById('wf-exp').value,
+    lead_source: 'Workforce Interest Form'
+  };
+
+  fetch(FORMSPREE_ENDPOINT,{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify(payload)
+  })
+  .then(res=>{
+    if(!res.ok) throw new Error('Submission failed');
+    document.getElementById('wf-form').style.display='none';
+    document.getElementById('wf-success-msg').style.display='block';
+  })
+  .catch(()=>{
+    alert('Something went wrong sending your details. Please try again.');
+    btn.disabled=false;
+    btn.textContent='Register my interest →';
+  });
+}
 
 function submitGuide(evt){
   const name=document.getElementById('g-name').value.trim();
