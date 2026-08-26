@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aged Care Casey — Free Guides & Tools for Casey & Cardinia Families</title>
 <link rel="canonical" href="https://agedcarecasey.com.au/">
-<meta name="description" content="Free tools and plain-English guidance to help Casey and Cardinia families understand Support at Home, check eligibility, and connect with trusted local aged care providers.">
+<meta name="description" content="Free tools and plain-English guidance to help Casey and Cardinia families understand Support at Home, check eligibility, and find the right local aged care providers.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgcng9IjE0IiBmaWxsPSIjMkQ1MDE2Ii8+Cjx0ZXh0IHg9IjMyIiB5PSI0MiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI2IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BQzwvdGV4dD4KPC9zdmc+Cg==">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,6 +71,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,250,244,
 .submit-btn{width:100%;background:var(--sage);color:#fff;border:none;padding:13px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--sans);margin-top:4px;transition:background .15s}
 .submit-btn:hover{background:var(--sage-mid)}
 .form-note{font-size:11px;color:var(--ink-light);text-align:center;margin-top:10px}
+.consent-group{margin:14px 0 4px;display:flex;flex-direction:column;gap:10px}
+.consent-row{display:flex;align-items:flex-start;gap:9px;cursor:pointer}
+.consent-row input[type="checkbox"]{margin-top:2px;width:16px;height:16px;flex-shrink:0;accent-color:var(--sage);cursor:pointer}
+.consent-row span{font-size:12px;color:var(--ink-mid);line-height:1.5}
+.consent-row strong{color:var(--sage);font-weight:600}
 .success-msg{display:none;text-align:center;padding:20px;background:var(--sage-light);border-radius:10px;border:1px solid #C5DCAA}
 .success-msg h4{font-family:var(--serif);color:var(--sage);font-size:18px;margin-bottom:6px}
 .success-msg p{font-size:13px;color:var(--ink-mid)}
@@ -193,15 +198,6 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
 .footer-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
 .footer-links a{font-size:12px;color:var(--ink-light);text-decoration:none}
 .footer-links a:hover{color:var(--sage)}
-.admin-toggle{position:fixed;bottom:20px;right:20px;background:var(--ink);color:#fff;border:none;padding:10px 16px;border-radius:24px;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--sans);z-index:150;box-shadow:0 4px 16px rgba(0,0,0,.2)}
-.admin-panel{display:none;position:fixed;inset:0;z-index:250;background:rgba(26,26,24,.7);align-items:center;justify-content:center;padding:20px}
-.admin-panel.open{display:flex}
-.admin-box{background:#fff;border-radius:16px;padding:28px;max-width:640px;width:100%;max-height:85vh;overflow-y:auto}
-.admin-box h3{font-family:var(--serif);font-size:20px;margin-bottom:4px}
-.admin-box .sub{font-size:12px;color:var(--ink-light);margin-bottom:20px}
-.admin-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
-.admin-row span:last-child{font-weight:600;color:var(--sage)}
-.admin-section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--ink-light);margin:18px 0 6px}
 @media(max-width:760px){
   .hero{grid-template-columns:1fr;gap:32px;padding:90px 20px 60px}
   .guide-inner{grid-template-columns:1fr}
@@ -233,14 +229,14 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
 </nav>
 
 <div class="disclosure-bar">
-  <p>Aged Care Casey is an independent local information and referral service for Casey & Cardinia families — not a government service, and not yet a registered aged care provider. We help you understand your options and connect you with trusted local providers.</p>
+  <p>Aged Care Casey is an independent local information and referral service for Casey & Cardinia families — not a government service, and not yet a registered aged care provider. We help you understand your options and connect you with local providers who may be able to help.</p>
 </div>
 
 <section class="hero">
   <div>
     <div class="hero-eyebrow">Free local resource · Casey & Cardinia</div>
     <h1>Aged care in Casey,<br><em>explained simply</em> —<br>and the right help found</h1>
-    <p class="hero-sub">Free tools and plain-English guidance to help Casey and Cardinia families understand Support at Home, check eligibility, and connect with trusted local providers who can help.</p>
+    <p class="hero-sub">Free tools and plain-English guidance to help Casey and Cardinia families understand Support at Home, check eligibility, and find local providers who can help.</p>
     <div class="hero-actions">
       <button class="btn-primary" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">Get free guidance</button>
       <button class="btn-ghost" onclick="openEstimator()">Check your SAH funding →</button>
@@ -255,7 +251,7 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
   <div id="waitlist">
     <div class="hero-card">
       <h3>Tell us what you need</h3>
-      <p>We'll point you to the right local help — whether that's from us directly or a trusted provider nearby.</p>
+      <p>We'll point you to local help — whether that's from us directly or another provider nearby.</p>
       <div id="hero-form">
         <div class="form-row">
           <div class="form-group">
@@ -319,8 +315,18 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
         </div>
         <input type="hidden" name="lead_source" value="Waitlist Form - Hero">
         <input type="hidden" name="_subject" value="New lead — Aged Care Casey waitlist">
+        <div class="consent-group">
+          <label class="consent-row">
+            <input type="checkbox" id="consent-referral" name="referral_consent" value="Yes" required>
+            <span>I'm okay with my details being shared with a suitable local provider so they can contact me about this enquiry. <strong>Required to proceed.</strong></span>
+          </label>
+          <label class="consent-row">
+            <input type="checkbox" id="consent-marketing" name="marketing_consent" value="Yes">
+            <span>I'd also like to receive occasional guides and updates from Aged Care Casey by email. <strong>Optional — you can say no and we'll still help with your enquiry.</strong></span>
+          </label>
+        </div>
         <button class="submit-btn" onclick="submitForm(event)">Get matched with local help →</button>
-        <p class="form-note">🔒 Your details are private. No spam, ever. Unsubscribe anytime.</p>
+        <p class="form-note">🔒 Your details are only used to help with your enquiry, as described above.</p>
       </div>
       <div class="success-msg" id="success-msg">
         <h4 id="success-title">Thanks, we're on it 🎉</h4>
@@ -383,7 +389,7 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
       <div class="tool-card" onclick="document.getElementById('directory').scrollIntoView({behavior:'smooth'})">
         <div class="tool-icon">🗺️</div>
         <h4>Local service map</h4>
-        <p>See what kinds of care are available locally right now, and which categories we connect you to trusted partner services for.</p>
+        <p>See what kinds of care are available locally right now, and which categories we can point you toward a provider for.</p>
         <div class="tool-link">View service map →</div>
       </div>
       <div class="tool-card" onclick="alert('Coming soon — our 12-question provider comparison checklist.')">
@@ -406,13 +412,13 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
   <div class="section-inner">
     <div class="section-label">Where every category currently points</div>
     <div class="section-title">An honest map of local care<br>in Casey & Cardinia</div>
-    <div class="section-body">We're an independent local guide — not yet a registered aged care provider ourselves. Right now, every category below connects you to a trusted local provider we've vetted, rather than a service we deliver directly. We'll update this the moment that changes.</div>
+    <div class="section-body">We're an independent local guide — not yet a registered aged care provider ourselves. Right now, every category below connects you to a local provider, rather than a service we deliver directly. We're upfront that we haven't yet built a formal verification process — we'll update this page as that develops.</div>
 
     <div class="category-grid">
       <div class="cat-card tag-referred">
         <span class="cat-status referred">We connect you locally</span>
         <h5>Domestic Assistance</h5>
-        <p>Cleaning, laundry, meal preparation, grocery shopping — we introduce you to a vetted local provider.</p>
+        <p>Cleaning, laundry, meal preparation, grocery shopping — we introduce you to a local provider.</p>
       </div>
       <div class="cat-card tag-referred">
         <span class="cat-status referred">We connect you locally</span>
@@ -437,7 +443,7 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
       <div class="cat-card tag-referred">
         <span class="cat-status referred">We connect you locally</span>
         <h5>Allied Health</h5>
-        <p>Physiotherapy, occupational therapy, and podiatry — we point you to trusted Casey-based allied health providers.</p>
+        <p>Physiotherapy, occupational therapy, and podiatry — we point you to Casey-based allied health providers.</p>
       </div>
       <div class="cat-card tag-referred">
         <span class="cat-status referred">We connect you locally</span>
@@ -547,50 +553,50 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
 
 <section class="section partners-section">
   <div class="section-inner">
-    <div class="section-label">Who we work with</div>
-    <div class="section-title">A trusted part of<br>the Casey & Cardinia care network</div>
-    <div class="section-body">We build relationships with health professionals, hospitals, and community organisations so you can access the right help faster — whether that's from us or a trusted partner.</div>
+    <div class="section-label">Who we aim to work with</div>
+    <div class="section-title">Building toward a genuine<br>Casey & Cardinia care network</div>
+    <div class="section-body">We're not yet formally connected with the organisations below — this is the kind of local network we're actively building. If you're one of these organisations and want to talk, we'd welcome that.</div>
     <div class="partners-grid">
       <div class="partner-card">
         <div class="partner-icon">🏥</div>
         <div>
-          <h5>Casey Hospital</h5>
-          <p>Working with discharge planners to arrange care for patients returning home after hospitalisation.</p>
+          <h5>Hospitals & discharge planning</h5>
+          <p>We'd like to support families arranging care for a loved one returning home after hospitalisation — an area we're hoping to build real local relationships in.</p>
         </div>
       </div>
       <div class="partner-card">
         <div class="partner-icon">👩‍⚕️</div>
         <div>
           <h5>Local GPs</h5>
-          <p>Your GP can refer you directly to My Aged Care through their system — we work with practices across Casey and Cardinia.</p>
+          <p>Your GP can refer you directly to My Aged Care through their own system today — this doesn't require any relationship with us, and is often the fastest first step.</p>
         </div>
       </div>
       <div class="partner-card">
         <div class="partner-icon">🏛️</div>
         <div>
           <h5>Casey & Cardinia Councils</h5>
-          <p>Connected with council ageing services to help families navigate CHSP and community support while waiting for SAH funding.</p>
+          <p>Council ageing services can help with CHSP and community support while you wait for SAH funding — we'd welcome the chance to work alongside them in future.</p>
         </div>
       </div>
       <div class="partner-card">
         <div class="partner-icon">🌏</div>
         <div>
           <h5>Community organisations</h5>
-          <p>Partnering with multicultural community groups across Casey to reach families from diverse backgrounds.</p>
+          <p>We'd like to build genuine relationships with multicultural community groups across Casey to better reach families from diverse backgrounds.</p>
         </div>
       </div>
       <div class="partner-card">
         <div class="partner-icon">💊</div>
         <div>
           <h5>Local pharmacies</h5>
-          <p>Pharmacists in Casey often spot families who need more support. We make referrals easy.</p>
+          <p>Pharmacists are often among the first to notice a family needs more support — another local relationship we're hoping to build over time.</p>
         </div>
       </div>
       <div class="partner-card">
         <div class="partner-icon">🤝</div>
         <div>
           <h5>Are you a local provider?</h5>
-          <p>If you deliver aged care services in Casey or Cardinia — especially personal care, nursing, or allied health — <a href="#waitlist" style="color:var(--sage);font-weight:600">register as a referral partner →</a></p>
+          <p>If you deliver aged care services in Casey or Cardinia — especially personal care, nursing, or allied health — <a href="#waitlist" style="color:var(--sage);font-weight:600">get in touch about a referral relationship →</a></p>
         </div>
       </div>
     </div>
@@ -603,7 +609,7 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
     <div class="section-title">A straight answer, from someone<br>who lives here</div>
     <div class="about-box">
       <p><strong>Aged Care Casey exists because the system is genuinely confusing</strong> — and Casey and Cardinia, despite being Victoria's largest and fastest-growing council area, have some of the thinnest aged care provider coverage in the state. Families here are often left figuring out the new Support at Home program on their own.</p>
-      <p>We're a Casey-based team, and we want to be upfront: we are not yet a registered aged care provider. We're currently going through the process of becoming one. Until that's complete, our role is to help you understand the system and connect you with trusted local providers we've vetted — at no cost, and with no obligation.</p>
+      <p>We're a Casey-based team, and we want to be upfront: we are not yet a registered aged care provider. We're currently going through the process of becoming one. Until that's complete, our role is to help you understand the system and connect you with local providers who may be a good fit — at no cost, and with no obligation. We're also upfront that we don't yet have a formal provider verification process in place, and we'll be transparent as that develops.</p>
       <p>Every enquiry we receive helps us understand what Casey and Cardinia families actually need most. That's genuinely useful to us as we build toward delivering services ourselves — and it means the help we point you toward today is based on real local knowledge, not a directory search.</p>
       <p>We'll update this page the moment our own registration is complete and we can begin delivering services directly.</p>
     </div>
@@ -770,29 +776,6 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
   </div>
 </div>
 
-<button class="admin-toggle" onclick="toggleAdmin()">📊 Demo: Data Dashboard</button>
-<div class="admin-panel" id="admin-panel">
-  <div class="admin-box">
-    <h3>Demand Intelligence — Illustrative Demo</h3>
-    <p class="sub">This is what your captured lead data could look like once the site is live. Every submission is tagged served vs. referred-out by category and suburb — this is the strategic asset behind the site.</p>
-
-    <div class="admin-section-title">Leads by category (last 90 days — illustrative)</div>
-    <div class="admin-row"><span>🟢 Domestic assistance (served)</span><span>142 leads</span></div>
-    <div class="admin-row"><span>🟢 Social support (served)</span><span>98 leads</span></div>
-    <div class="admin-row"><span>🟢 Transport (served)</span><span>76 leads</span></div>
-    <div class="admin-row"><span>🟡 Personal care (referred out)</span><span>211 leads</span></div>
-    <div class="admin-row"><span>🟡 Nursing / clinical (referred out)</span><span>84 leads</span></div>
-    <div class="admin-row"><span>🟡 Allied health (referred out)</span><span>52 leads</span></div>
-
-    <div class="admin-section-title">What this tells you</div>
-    <div class="admin-row"><span>Personal care is your #1 referred-out category</span><span style="color:var(--gold)">Scale signal</span></div>
-    <div class="admin-row"><span>Highest-demand suburb</span><span>Cranbourne</span></div>
-    <div class="admin-row"><span>Fastest-growing category</span><span>Personal care +38%</span></div>
-
-    <p style="font-size:12px;color:var(--ink-light);margin-top:18px;line-height:1.6">In production, this data would connect to a real backend (Airtable, Google Sheets, or a simple database) so every form submission — including category, suburb, urgency, and served/referred status — is logged automatically for you to review.</p>
-  </div>
-</div>
-
 <script>
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mzepgyqr';
 
@@ -800,7 +783,10 @@ function submitForm(evt){
   const fn=document.getElementById('fn').value.trim();
   const email=document.getElementById('email').value.trim();
   const category=document.getElementById('category').value;
+  const referralConsent=document.getElementById('consent-referral').checked;
+  const marketingConsent=document.getElementById('consent-marketing').checked;
   if(!fn||!email){alert('Please enter your name and email.');return;}
+  if(!referralConsent){alert('Please tick the first box so we can share your details with a suitable local provider.');return;}
 
   const btn=evt.currentTarget;
   btn.disabled=true;
@@ -814,6 +800,8 @@ function submitForm(evt){
     role: document.getElementById('role').value,
     suburb: document.getElementById('suburb').value,
     service_requested: category,
+    referral_consent: referralConsent ? 'Yes' : 'No',
+    marketing_consent: marketingConsent ? 'Yes' : 'No',
     lead_source: 'Waitlist Form - Hero'
   };
 
@@ -828,7 +816,7 @@ function submitForm(evt){
     const title=document.getElementById('success-title');
     const body=document.getElementById('success-body');
     title.textContent="Thanks — we'll connect you with the right local help 🎉";
-    body.textContent="We'll be in touch within 24 hours with a recommendation from a trusted local provider.";
+    body.textContent="We'll be in touch within 24 hours with a recommendation from a local provider.";
     document.getElementById('success-msg').style.display='block';
   })
   .catch(()=>{
@@ -954,7 +942,7 @@ function showEstResult(){
   const referNote=document.getElementById('refer-note');
   const serviceLabels={domestic:'Domestic help',personal:'Personal care',clinical:'Clinical care',mix:'These services'};
   referNote.classList.add('show');
-  referNote.innerHTML='<strong>Good to know:</strong> '+(serviceLabels[serviceType]||'This')+' is delivered by a trusted local partner we connect you with — we are an independent local guide, not yet a registered aged care provider ourselves. We\'ll include their details with your estimate.';
+  referNote.innerHTML='<strong>Good to know:</strong> '+(serviceLabels[serviceType]||'This')+' is delivered by a local partner we connect you with — we are an independent local guide, not yet a registered aged care provider ourselves. We\'ll include their details with your estimate.';
   document.getElementById('es5').classList.remove('active');
   document.getElementById('es-result').classList.add('active');
 }
@@ -1048,9 +1036,6 @@ function resetChecker(){
   steps.forEach(s=>document.getElementById(s).classList.remove('active'));
   document.getElementById('ck1').classList.add('active');
 }
-
-function toggleAdmin(){document.getElementById('admin-panel').classList.toggle('open')}
-document.getElementById('admin-panel').addEventListener('click',function(e){if(e.target===this)this.classList.remove('open')});
 </script>
 </body>
 </html>
