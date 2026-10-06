@@ -136,6 +136,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,250,244,
 .refer-note{margin-top:14px;padding:12px 14px;background:var(--gold-light);border:1px solid #D4AA50;border-radius:8px;font-size:12.5px;color:#7A5A0E;line-height:1.5;display:none}
 .refer-note.show{display:block}
 .checker-box{background:#fff;border:1px solid var(--border);border-radius:20px;padding:36px;max-width:640px;margin-top:44px}
+.mygov-section{background:var(--blue-light)}
+.mygov-list{max-width:760px;margin-top:40px}
+.mygov-item{background:#fff;border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.mygov-q{width:100%;text-align:left;padding:18px 22px;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--sans);font-size:15px;font-weight:600;color:var(--ink);gap:16px}
+.mygov-q:hover{background:var(--blue-light)}
+.mygov-arrow{font-size:14px;color:var(--blue);flex-shrink:0;transition:transform .2s}
+.mygov-item.open .mygov-arrow{transform:rotate(180deg)}
+.mygov-a{max-height:0;overflow:hidden;transition:max-height .25s ease;padding:0 22px}
+.mygov-item.open .mygov-a{max-height:600px;padding:0 22px 20px}
+.mygov-a p{font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:10px}
+.mygov-a p:last-child{margin-bottom:0}
+.mygov-a ol,.mygov-a ul{margin:0 0 10px 20px}
+.mygov-a li{font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:4px}
+.mygov-reassure{background:var(--sage-light);border-left:3px solid var(--sage);padding:12px 16px;border-radius:0 8px 8px 0;margin-top:10px;font-size:13.5px}
 .checker-step{display:none}
 .checker-step.active{display:block}
 .checker-q{font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:6px}
@@ -513,6 +527,71 @@ footer{background:var(--warm);border-top:1px solid var(--border);padding:40px 24
         </div>
         <button onclick="resetChecker()" style="margin-top:12px;background:none;border:none;font-size:12px;color:var(--ink-light);cursor:pointer">Start again</button>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section mygov-section" id="mygov-help">
+  <div class="section-inner">
+    <div class="section-label">The part nobody explains clearly</div>
+    <div class="section-title">Logged in and still confused?<br>You're genuinely not alone</div>
+    <div class="section-body">Getting through the assessment is only half the journey. Families regularly get stuck on the online account itself — myGov, nominating yourself as a representative, and figuring out how funding actually gets used. Here are honest, accurate answers to the questions we see asked most.</div>
+
+    <div class="mygov-list">
+
+      <div class="mygov-item">
+        <button class="mygov-q" onclick="toggleMygov(this)">Do I actually need to link myGov to help my parents? <span class="mygov-arrow">⌄</span></button>
+        <div class="mygov-a">
+          <p><strong>No — it's a convenience, not a requirement.</strong> Everything the online account does can also be done by phone on 1800 200 422. If myGov feels overwhelming, you can manage the entire process over the phone instead, including checking assessment outcomes, referral codes, and representative arrangements.</p>
+          <div class="mygov-reassure">If you've been struggling with the website, it's completely fine to put it aside and just call instead.</div>
+        </div>
+      </div>
+
+      <div class="mygov-item">
+        <button class="mygov-q" onclick="toggleMygov(this)">How do I actually link My Aged Care to myGov? <span class="mygov-arrow">⌄</span></button>
+        <div class="mygov-a">
+          <p>Once your parent is already registered with My Aged Care (this has to happen first), linking takes 5 steps:</p>
+          <ol>
+            <li>Sign in to myGov</li>
+            <li>Select "View and link services"</li>
+            <li>Select "Link" on the My Aged Care tile</li>
+            <li>Confirm whether you're receiving aged care yourself, or representing someone who is</li>
+            <li>Provide ID — their Aged Care ID (from a My Aged Care letter) or Medicare number, plus their name and contact details exactly as registered</li>
+          </ol>
+          <p>You only need to do this once. After that, My Aged Care appears as a tile on the myGov homepage every time you log in.</p>
+        </div>
+      </div>
+
+      <div class="mygov-item">
+        <button class="mygov-q" onclick="toggleMygov(this)">What does "nominating myself as a representative" actually mean? <span class="mygov-arrow">⌄</span></button>
+        <div class="mygov-a">
+          <p>To manage a parent's aged care online or by phone on their behalf, you need to be registered as their <strong>representative</strong>. This requires their consent — spoken (on a call to 1800 200 422) or written.</p>
+          <p>You can choose the level of access:</p>
+          <ul>
+            <li><strong>Full representative</strong> — you can make decisions and manage services on their behalf</li>
+            <li><strong>View-only</strong> — you can see information, but decisions stay with them</li>
+          </ul>
+          <p>If your parent can't give consent themselves due to capacity issues, formal documentation such as Power of Attorney or a guardianship order may be required instead.</p>
+        </div>
+      </div>
+
+      <div class="mygov-item">
+        <button class="mygov-q" onclick="toggleMygov(this)">What does it mean if they're "accepted or confirmed" for a service? <span class="mygov-arrow">⌄</span></button>
+        <div class="mygov-a">
+          <p>This generally refers to an <strong>approved service</strong> showing up in the online account, along with a <strong>referral code</strong> — a unique code tied to that approval. The referral code is what you give to a chosen provider so they can start delivering that service and begin claiming funding for it.</p>
+          <p>Your online account also shows assessment outcomes, current approved services, and who is registered as your representative.</p>
+        </div>
+      </div>
+
+      <div class="mygov-item">
+        <button class="mygov-q" onclick="toggleMygov(this)">Do we pay for things ourselves and submit receipts? <span class="mygov-arrow">⌄</span></button>
+        <div class="mygov-a">
+          <p><strong>In almost all cases, no — this is one of the most common misunderstandings.</strong> Once your parent is signed up with a registered provider, that provider delivers the service and claims the funding directly from Services Australia through their own system. You generally don't pay upfront and seek reimbursement yourself.</p>
+          <p>If you're finding yourself wondering about receipts and reimbursement, it's often a sign that a provider hasn't been chosen and signed up with yet — that's usually the actual next step, not a funds-access process you need to run yourself.</p>
+          <div class="mygov-reassure">Not sure where your parent is up to in this process? Our free eligibility checker and funding estimator can help you figure out the next concrete step.</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1035,6 +1114,13 @@ function resetChecker(){
   const steps=['ck1','ck2','ck3','ck4','ck-result'];
   steps.forEach(s=>document.getElementById(s).classList.remove('active'));
   document.getElementById('ck1').classList.add('active');
+}
+
+function toggleMygov(btn){
+  const item=btn.closest('.mygov-item');
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.mygov-item.open').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen){item.classList.add('open');}
 }
 </script>
 </body>
